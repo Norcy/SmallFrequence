@@ -17,16 +17,18 @@ class SiteRestHandler extends SimpleRest {
         }
  
         $requestContentType = $_SERVER['HTTP_ACCEPT'];
-        //$this ->setHttpHeaders($requestContentType, $statusCode);
                
         if(strpos($requestContentType,'text/html') !== false){
+            $this ->setHttpHeaders('text/html', $statusCode);
             $response = $this->encodeHtml($rawData);
             echo $response;
         } else if(strpos($requestContentType,'application/xml') !== false){
+            $this ->setHttpHeaders('application/xml', $statusCode);
             $response = $this->encodeXml($rawData);
             echo $response;
         } else {
             // 默认输出 JSON
+            $this ->setHttpHeaders('application/json', $statusCode);
             $response = $this->encodeJson($rawData);
             echo $response;
         }
@@ -69,15 +71,17 @@ class SiteRestHandler extends SimpleRest {
         }
  
         $requestContentType = $_SERVER['HTTP_ACCEPT'];
-        //$this->setHttpHeaders($requestContentType, $statusCode);
                 
         if(strpos($requestContentType,'text/html') !== false){
+            $this ->setHttpHeaders('text/html', $statusCode);
             $response = $this->encodeHtml($rawData);
             echo $response;
         } else if(strpos($requestContentType,'application/xml') !== false){
+            $this ->setHttpHeaders('application/html', $statusCode);
             $response = $this->encodeXml($rawData);
             echo $response;
         } else {
+            $this ->setHttpHeaders('application/json', $statusCode);
             $response = $this->encodeJson($rawData);
             echo $response;
         }
