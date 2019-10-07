@@ -9,7 +9,9 @@ class SiteRestHandler extends SimpleRest {
     	echo $json_string;	
     }
     
-    public function getSite($id) {
+    function getSite($id) {
+        $json_string = file_get_contents('FM_List/'.$id.'.json');
+        echo $json_string;  
     }
 }
 ?>
