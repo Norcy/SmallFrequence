@@ -44,6 +44,7 @@ def simplifyChannel(channel):
     simplifiedChannel["content_id"] = channelId;
     simplifiedChannel["title"] = channel["title"];
     simplifiedChannel["url"] = 'http://ls.qingting.fm/live/{}/64k.m3u8'.format(channelId);
+    simplifiedChannel["poster"] = channel["cover"];
     return simplifiedChannel
 
 def simplifyChannels(channels):
