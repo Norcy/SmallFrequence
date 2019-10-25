@@ -4,8 +4,13 @@ require_once("SimpleRest.php");
  
 class SiteRestHandler extends SimpleRest {
  
-    function getAllSites() {    
+ 	function getAllRegions() {    
         $json_string = file_get_contents('FM_List/regions.json');
+    	echo $json_string;	
+    }
+
+    function getAllSites() {    
+        $json_string = file_get_contents('FM_List/all.json');
     	echo $json_string;	
     }
     

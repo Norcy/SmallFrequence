@@ -1,27 +1,42 @@
 <?php
 require_once("SiteRestHandler.php");
         
-$view = "";
+$fm = "";
+$region = "";
 if(isset($_GET["fm"]))
-    $view = $_GET["fm"];
+    $fm = $_GET["fm"];
+elseif (isset($_GET["region"])) {
+    $region = $_GET["region"];
+}
+
 /*
  * RESTful service 控制器
  * URL 映射
 */
-switch($view){
+switch($fm){
  
     case "all":
-        // 处理 REST Url /site/list/
         $siteRestHandler = new SiteRestHandler();
         $siteRestHandler->getAllSites();
         break;
         
     case "single":
-        // 处理 REST Url /site/show/<id>/
         $siteRestHandler = new SiteRestHandler();
         $siteRestHandler->getSite($_GET["id"]);
         break;
  
+    case "" :
+        //404 - not found;
+        break;
+}
+
+switch($region){
+ 
+    case "all":
+        $siteRestHandler = new SiteRestHandler();
+        $siteRestHandler->getAllRegions();
+        break;
+        
     case "" :
         //404 - not found;
         break;
