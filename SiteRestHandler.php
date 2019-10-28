@@ -6,6 +6,15 @@ class SiteRestHandler extends SimpleRest {
  
  	function getAllRegions($version) {    
         $json_string = file_get_contents('FM_List/regions.json');
+        // 用参数true把JSON字符串强制转成PHP数组  
+        $data = json_decode($json_string, true);
+        echo $version;
+        echo "\n"
+        echo $data["version"];
+        echo "\n"
+        if ($version == null || $version < $data["version"]) {
+            return;
+        }
     	echo $json_string;	
     }
 
