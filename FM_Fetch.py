@@ -6,6 +6,7 @@ from pprint import pprint
 import json
 import shutil
 import os
+import time
 
 region_url = 'https://rapi.qingting.fm/regions'
 
@@ -65,8 +66,12 @@ if __name__ == "__main__":
         shutil.rmtree(root_director)    
     os.mkdir(root_director)
 
+    version = int(time.time());
+    finalRegions = {};
+    finalRegions["version"] = version;
+    finalRegions["data"] = regions;
     with open(root_director+'/regions.json', 'w') as f:
-        json.dump(regions, f, ensure_ascii=False)
+        json.dump(finalRegions, f, ensure_ascii=False)
 
     allChannels = [];
     for region in regions:
@@ -76,5 +81,8 @@ if __name__ == "__main__":
         simplifiedChannels = simplifyChannels(regionId, channels)
         allChannels += simplifiedChannels;
     
+    finalChannels = {};
+    finalChannels["version"] = version;
+    finalChannels["data"] = allChannels;
     with open(root_director+'/all.json', 'w') as f:
-        json.dump(allChannels, f, ensure_ascii=False)
+        json.dump(finalChannels, f, ensure_ascii=False)
