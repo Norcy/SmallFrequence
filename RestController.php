@@ -9,6 +9,8 @@ elseif (isset($_GET["region"])) {
     $region = $_GET["region"];
 }
 
+$version = $_GET["version"];
+
 /*
  * RESTful service 控制器
  * URL 映射
@@ -17,12 +19,12 @@ switch($fm){
  
     case "all":
         $siteRestHandler = new SiteRestHandler();
-        $siteRestHandler->getAllSites();
+        $siteRestHandler->getAllSites($version);
         break;
         
     case "single":
         $siteRestHandler = new SiteRestHandler();
-        $siteRestHandler->getSite($_GET["id"]);
+        $siteRestHandler->getSite($_GET["id"], $version);
         break;
  
     case "" :
@@ -34,7 +36,7 @@ switch($region){
  
     case "all":
         $siteRestHandler = new SiteRestHandler();
-        $siteRestHandler->getAllRegions();
+        $siteRestHandler->getAllRegions($version);
         break;
         
     case "" :
