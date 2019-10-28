@@ -10,7 +10,7 @@ class SiteRestHandler extends SimpleRest {
         $data = json_decode($json_string, true);
         #echo $version;
         #echo $data["version"];
-        if ($version < $data["version"]) {
+        if ($version == null || $version >= $data["version"]) {
             return;
         }
     	echo $json_string;	
@@ -19,8 +19,8 @@ class SiteRestHandler extends SimpleRest {
     function getAllSites($version) {    
         $json_string = file_get_contents('FM_List/all.json');
     	$data = json_decode($json_string, true);
-	if ($version < $data["version"]) {
-            return;
+        if ($version == null || $version >= $data["version"]) {
+	    return;
         }
 	echo $json_string;	
     }
@@ -28,7 +28,7 @@ class SiteRestHandler extends SimpleRest {
     function getSite($id, $version) {
         $json_string = file_get_contents('FM_List/'.$id.'.json');
         $data = json_decode($json_string, true);
-        if ($version < $data["version"]) {
+        if ($version == null || $version >= $data["version"]) {
             return;
         }
 	echo $json_string;  
