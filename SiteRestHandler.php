@@ -6,6 +6,7 @@ class SiteRestHandler extends SimpleRest {
  
  	function getAllRegions() {    
         $json_string = file_get_contents('FM_List/regions.json');
+        $json_string = "{'version':111, 'data':".$json_string."}";
     	echo $json_string;	
     }
 
