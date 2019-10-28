@@ -8,11 +8,9 @@ class SiteRestHandler extends SimpleRest {
         $json_string = file_get_contents('FM_List/regions.json');
         // 用参数true把JSON字符串强制转成PHP数组  
         $data = json_decode($json_string, true);
-        echo $version;
-        echo "\n"
-        echo $data["version"];
-        echo "\n"
-        if ($version == null || $version < $data["version"]) {
+        #echo $version;
+        #echo $data["version"];
+        if ($version < $data["version"]) {
             return;
         }
     	echo $json_string;	
@@ -20,12 +18,20 @@ class SiteRestHandler extends SimpleRest {
 
     function getAllSites($version) {    
         $json_string = file_get_contents('FM_List/all.json');
-    	echo $json_string;	
+    	$data = json_decode($json_string, true);
+	if ($version < $data["version"]) {
+            return;
+        }
+	echo $json_string;	
     }
     
     function getSite($id, $version) {
         $json_string = file_get_contents('FM_List/'.$id.'.json');
-        echo $json_string;  
+        $data = json_decode($json_string, true);
+        if ($version < $data["version"]) {
+            return;
+        }
+	echo $json_string;  
     }
 }
 ?>
