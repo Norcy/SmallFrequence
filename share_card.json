@@ -1,0 +1,199 @@
+{
+  "width": "350px",
+  "height": "500px",
+  "background": "#FAFAFA",
+  "views": [
+    {
+      "type": "rect",
+      "css": {
+        "background": "#E4E7EE",
+        "width": "375px",
+        "height": "375px",
+        "top": "0px",
+        "left": "0px",
+        "rotate": "0",
+        "borderRadius": "",
+        "shadow": "",
+        "color": "#E4E7EE"
+      }
+    },
+    {
+      "type": "image",
+      "url": qrcode,
+      "css": {
+        "width": "75px",
+        "height": "75px",
+        "top": "37.5px",
+        "left": "136.5px",
+        "rotate": "0",
+        "borderRadius": "450px",
+        "borderWidth": "",
+        "borderColor": "#000000",
+        "shadow": "",
+        "mode": "scaleToFill"
+      }
+    },
+    {
+      "type": "image",
+      "url": "https://norcy.weimiaotech.com/SmallFrequence/frequence.png",
+      "css": {
+        "width": "30px",
+        "height": "30px",
+        "top": "209px",
+        "left": "271px",
+        "rotate": "0",
+        "borderRadius": "",
+        "borderWidth": "",
+        "borderColor": "#000000",
+        "shadow": "",
+        "mode": "scaleToFill"
+      }
+    },
+    {
+      "type": "image",
+      "url": avatarUrl,
+      "css": {
+        "width": "50px",
+        "height": "50px",
+        "top": "350.5px",
+        "left": "145.5px",
+        "rotate": "0",
+        "borderRadius": "25px",
+        "borderWidth": "",
+        "borderColor": "#000000",
+        "shadow": "10 10 50 #888888",
+        "mode": "scaleToFill"
+      }
+    },
+    {
+      "type": "text",
+      "text": radioTitle,
+      "css": {
+        "color": "#84A9C3",
+        "background": "rgba(0,0,0,0)",
+        "width": "250px",
+        "height": "35.74999999999999px",
+        "top": "214px",
+        "left": "47.5px",
+        "rotate": "0",
+        "borderRadius": "",
+        "borderWidth": "",
+        "borderColor": "#000000",
+        "shadow": "2.5 2.5 3.5 #FFFFFF",
+        "padding": "0px",
+        "fontSize": "25px",
+        "fontWeight": "normal",
+        "maxLines": "2",
+        "lineHeight": "36.07500000000001px",
+        "textStyle": "fill",
+        "textDecoration": "none",
+        "fontFamily": "",
+        "textAlign": "center"
+      }
+    },
+    {
+      "type": "text",
+      "text": "小频率",
+      "css": {
+        "color": "#84A9C3",
+        "background": "rgba(0,0,0,0)",
+        "width": "100px",
+        "height": "21.449999999999996px",
+        "top": "122px",
+        "left": "124.5px",
+        "rotate": "0",
+        "borderRadius": "",
+        "borderWidth": "",
+        "borderColor": "#000000",
+        "shadow": "",
+        "padding": "0px",
+        "fontSize": "15px",
+        "fontWeight": "normal",
+        "maxLines": "2",
+        "lineHeight": "21.645000000000003px",
+        "textStyle": "fill",
+        "textDecoration": "none",
+        "fontFamily": "",
+        "textAlign": "center"
+      }
+    },
+    {
+      "type": "text",
+      "text": "未知频率·等你遇见",
+      "css": {
+        "color": "#555555",
+        "background": "rgba(0,0,0,0)",
+        "width": "157.5px",
+        "height": "21.449999999999996px",
+        "top": "441.5px",
+        "left": "89.5px",
+        "rotate": "0",
+        "borderRadius": "",
+        "borderWidth": "",
+        "borderColor": "#000000",
+        "shadow": "1.5 1.5 4 #AAAAAA",
+        "padding": "0px",
+        "fontSize": "15px",
+        "fontWeight": "normal",
+        "maxLines": "2",
+        "lineHeight": "21.645000000000003px",
+        "textStyle": "fill",
+        "textDecoration": "none",
+        "fontFamily": "",
+        "textAlign": "center"
+      }
+    },
+    {
+      "type": "text",
+      "text": "Nx",
+      "css": {
+        "color": "#555555",
+        "background": "rgba(0,0,0,0)",
+        "width": "100px",
+        "height": "21.449999999999996px",
+        "top": "411px",
+        "left": "119.5px",
+        "rotate": "0",
+        "borderRadius": "",
+        "borderWidth": "",
+        "borderColor": "#000000",
+        "shadow": "1.5 1.5 2.5 #AAAAAA",
+        "padding": "0px",
+        "fontSize": "15px",
+        "fontWeight": "normal",
+        "maxLines": "2",
+        "lineHeight": "21.645000000000003px",
+        "textStyle": "fill",
+        "textDecoration": "none",
+        "fontFamily": "",
+        "textAlign": "center"
+      }
+    },
+    {
+      "type": "text",
+      "text": "我正在听",
+      "css": {
+        "color": "#888888",
+        "background": "rgba(0,0,0,0)",
+        "width": "100px",
+        "height": "21.449999999999996px",
+        "top": "223px",
+        "left": "4px",
+        "rotate": "0",
+        "borderRadius": "",
+        "borderWidth": "",
+        "borderColor": "#000000",
+        "shadow": "",
+        "padding": "0px",
+        "fontSize": "15px",
+        "fontWeight": "normal",
+        "maxLines": "2",
+        "lineHeight": "21.645000000000003px",
+        "textStyle": "fill",
+        "textDecoration": "none",
+        "fontFamily": "",
+        "textAlign": "center"
+      }
+    }
+  ]
+}
