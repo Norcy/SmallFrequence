@@ -35,7 +35,7 @@ def simplifyChannel(regionId, channel):
     simplifiedChannel["content_id"] = fake_group_prefix-channel["id"];
     simplifiedChannel["title"] = channel["musicdesc"];
     simplifiedChannel["url"] = channel["musicurl"];
-    simplifiedChannel["poster"] = channel["cover_miniapp_big"];
+    # simplifiedChannel["poster"] = channel["cover_miniapp_big"];
     simplifiedChannel["group_id"] = regionId
     return simplifiedChannel
 
