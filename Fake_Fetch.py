@@ -68,7 +68,7 @@ if __name__ == "__main__":
         shutil.rmtree(root_director)    
     os.mkdir(root_director)
 
-    version = int(time.time())/2;
+    version = int(time.time()/2);
     finalRegions = {};
     finalRegions["version"] = version;
     finalRegions["data"] = regions;
