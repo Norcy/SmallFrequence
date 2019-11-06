@@ -14,6 +14,8 @@ categories_url = 'https://api.psy-1.com/miniapp/v1/tag/music?tag_id={}'
 
 root_director = "Fake_List"
 
+fake_group_prefix = -100000
+
 def doRequests(url):
     print(url)
     payload = {"version" : "6", "platformid":"3",
@@ -30,12 +32,11 @@ def request_channels(regionId):
 
 def simplifyChannel(regionId, channel):
     simplifiedChannel = {}
-    group = -100000
-    simplifiedChannel["content_id"] = group-channel["id"];
+    simplifiedChannel["content_id"] = fake_group_prefix-channel["id"];
     simplifiedChannel["title"] = channel["musicdesc"];
     simplifiedChannel["url"] = channel["musicurl"];
     simplifiedChannel["poster"] = channel["cover_miniapp_big"];
-    simplifiedChannel["group_id"] = group-regionId
+    simplifiedChannel["group_id"] = regionId
     return simplifiedChannel
 
 def simplifyChannels(regionId, channels):
@@ -48,7 +49,7 @@ def simplifyRegion(region):
     # pprint(region)
     simplifiedRegion = {}
     simplifiedRegion["title"] = region["tag_name"]
-    simplifiedRegion["id"] = region["tag_id"];
+    simplifiedRegion["id"] = fake_group_prefix-region["tag_id"];
     return simplifiedRegion;
 
 def request_regions():
@@ -67,7 +68,7 @@ if __name__ == "__main__":
         shutil.rmtree(root_director)    
     os.mkdir(root_director)
 
-    version = int(time.time());
+    version = int(time.time())/2;
     finalRegions = {};
     finalRegions["version"] = version;
     finalRegions["data"] = regions;
