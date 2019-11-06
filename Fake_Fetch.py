@@ -27,7 +27,7 @@ def doRequests(url):
     return jsonResult
     
 def request_channels(regionId):
-    result = doRequests(categories_url.format(regionId))
+    result = doRequests(categories_url.format(-regionId+fake_group_prefix))
     return result["data"]
 
 def simplifyChannel(regionId, channel):
