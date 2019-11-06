@@ -64,15 +64,18 @@ def request_regions():
 if __name__ == "__main__":
     regions = request_regions()
 
-    if os.path.exists(root_director):
-        shutil.rmtree(root_director)    
-    os.mkdir(root_director)
+    absolute_root_director = os.path.split(os.path.realpath(__file__))[0]+"/"+root_director;
+    # print(absolute_root_director);
+
+    if os.path.exists(absolute_root_director):
+        shutil.rmtree(absolute_root_director)    
+    os.mkdir(absolute_root_director)
 
     version = int(time.time()/2);
     finalRegions = {};
     finalRegions["version"] = version;
     finalRegions["data"] = regions;
-    with open(root_director+'/regions.json', 'w') as f:
+    with open(absolute_root_director+'/regions.json', 'w') as f:
         json.dump(finalRegions, f, ensure_ascii=False)
 
     allChannels = [];
@@ -86,5 +89,5 @@ if __name__ == "__main__":
     finalChannels = {};
     finalChannels["version"] = version;
     finalChannels["data"] = allChannels;
-    with open(root_director+'/all.json', 'w') as f:
+    with open(absolute_root_director+'/all.json', 'w') as f:
         json.dump(finalChannels, f, ensure_ascii=False, indent=4, separators=(',', ':'))
