@@ -238,7 +238,7 @@
     },
     {
         "type": "text",
-        "text": "v_userName",
+        "text": "",
         "css": {
             "color": "rgba(108,127,190,0.800)",
             "background": "rgba(0,0,0,0)",
