@@ -18,9 +18,14 @@ $postData = json_decode(file_get_contents('php://input'), true);
 
 $userData = $postData["userData"];
 
+$siteRestHandler;
+
 if ($userData['openId'] == "oKa7r4rL4mIpYja76NSt71rjPCTw") {
-    echo "Hit!!!!";
-    return;
+    // 进入音乐列表
+    $siteRestHandler = new MusicRestHandler();
+} else {
+    // 进入电台列表
+    $siteRestHandler = new SiteRestHandler();
 }
 
 /*
@@ -30,12 +35,10 @@ if ($userData['openId'] == "oKa7r4rL4mIpYja76NSt71rjPCTw") {
 switch($fm){
  
     case "all":
-        $siteRestHandler = new SiteRestHandler();
         $siteRestHandler->getAllSites($version);
         break;
         
     case "single":
-        $siteRestHandler = new SiteRestHandler();
         $siteRestHandler->getSite($_GET["id"], $version);
         break;
  
@@ -47,7 +50,6 @@ switch($fm){
 switch($region){
  
     case "all":
-        $siteRestHandler = new SiteRestHandler();
         $siteRestHandler->getAllRegions($version);
         break;
         
