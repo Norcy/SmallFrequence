@@ -19,7 +19,7 @@ UserSongLists = "/user/playlist?uid="
 UserId = "341142092"
 root_director = "Music_List"
 
-fake_group_prefix = "netease_"
+fake_group_prefix = "n_"
 
 def getHtmlData(url):
     url = (url+"&timestamp=")+str(int(time.time()))
