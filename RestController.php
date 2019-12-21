@@ -3,13 +3,20 @@ require_once("SiteRestHandler.php");
         
 $fm = "";
 $region = "";
-if(isset($_GET["fm"]))
+if (isset($_GET["fm"])) {
     $fm = $_GET["fm"];
+}
 elseif (isset($_GET["region"])) {
     $region = $_GET["region"];
 }
 
 $version = $_GET["version"];
+
+$userData = $_POST['userData'];
+
+if ($userData['openId'] == "oKa7r4rL4mIpYja76NSt71rjPCTw") {
+    echo "Hit!!!!";
+}
 
 /*
  * RESTful service 控制器
