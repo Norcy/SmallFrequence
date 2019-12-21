@@ -80,6 +80,7 @@ def request_channels(regionId):
             simplifiedChannel["title"] = songInfo["name"];
             simplifiedChannel["url"] = SongUrl.format(songInfo["id"]);
             simplifiedChannel["group_id"] = regionId
+            simplifiedChannel["poster"] = songInfo["al"]["picUrl"];
             ret.append(simplifiedChannel)
 
     return ret
