@@ -12,10 +12,15 @@ elseif (isset($_GET["region"])) {
 
 $version = $_GET["version"];
 
-$userData = $_POST['userData'];
+$postData = json_decode(file_get_contents('php://input'), true);
+
+//var_dump($postData);
+
+$userData = $postData["userData"];
 
 if ($userData['openId'] == "oKa7r4rL4mIpYja76NSt71rjPCTw") {
     echo "Hit!!!!";
+    return;
 }
 
 /*
