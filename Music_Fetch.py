@@ -56,10 +56,11 @@ def request_regions(userId):
     songLists = []
     data = getJsonHtmlData(RootUrl+UserSongLists+userId);
     for singleData in data["playlist"]:
-        songList = {};
-        songList["title"] = singleData["name"];
-        songList["id"] = "{}{}".format(fake_group_prefix, singleData["id"]);
-        songLists.append(songList);
+        if str(singleData["userId"]) == UserId:
+            songList = {};
+            songList["title"] = singleData["name"];
+            songList["id"] = "{}{}".format(fake_group_prefix, singleData["id"]);
+            songLists.append(songList);
     return songLists;
 
 # 请求单个歌单信息
