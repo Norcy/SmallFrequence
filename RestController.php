@@ -1,6 +1,7 @@
 <?php
 require_once("SiteRestHandler.php");
-        
+require_once("MusicRestHandler.php");
+
 $fm = "";
 $region = "";
 if (isset($_GET["fm"])) {
@@ -20,7 +21,14 @@ $userData = $postData["userData"];
 
 $siteRestHandler;
 
-if ($userData['openId'] == "oKa7r4rL4mIpYja76NSt71rjPCTw") {
+$filename = 'userRecord.txt';
+if ($userData['openId'])
+{
+//    file_put_contents($filename, $userData['openId']."\n", FILE_APPEND|LOCK_EX);
+}
+
+if ($userData['openId'] == "oKa7r4qiXoI0rYAIRkAuHHBW2Mew" || $userData['openId'] == "oKa7r4rL4mIpYja76NSt71rjPCTw") {
+//if ($userData['openId'] == "oKa7r4rL4mIpYja76NSt71rjPCTw") {
     // 进入音乐列表
     $siteRestHandler = new MusicRestHandler();
 } else {
