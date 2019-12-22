@@ -3,8 +3,8 @@ header('Content-Type:text/json;charset=utf-8');
 require_once ("SimpleRest.php");
 
 class SiteRestHandler extends SimpleRest {
-    private $dic = "FM_List";
-    //private $dic = "Fake_List";
+    //private $dic = "FM_List";
+    private $dic = "Fake_List";
     function getAllRegions($version) {
         $json_string = file_get_contents($this->dic . "/regions.json");
         // 用参数true把JSON字符串强制转成PHP数组
