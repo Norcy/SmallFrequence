@@ -7,6 +7,7 @@ import json
 import shutil
 import os
 import time
+import datetime
 
 region_url = 'https://api.psy-1.com/miniapp/v1/music/tag'
 
@@ -62,6 +63,10 @@ def request_regions():
     return simplifiedRegions
 
 if __name__ == "__main__":
+   
+    d = datetime.datetime.fromtimestamp(time.time())
+    print(d.strftime("%Y-%m-%d %H:%M:%S.%f"))
+ 
     regions = request_regions()
 
     absolute_root_director = os.path.split(os.path.realpath(__file__))[0]+"/"+root_director;
