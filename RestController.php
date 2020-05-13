@@ -25,17 +25,18 @@ $siteRestHandler;
 $filename = 'userRecord.txt';
 if ($userData['openId'])
 {
-   file_put_contents($filename, $userData['openId']."\n", FILE_APPEND|LOCK_EX);
+//   file_put_contents($filename, $userData['openId']."\n", FILE_APPEND|LOCK_EX);
 }
 
 //if ($userData['openId'] == "oKa7r4qiXoI0rYAIRkAuHHBW2Mew" || $userData['openId'] == "oKa7r4rL4mIpYja76NSt71rjPCTw") {
-if ($userData['openId'] == "oKa7r4j8ii6JTr_MWwQuFWqPwHAU") {
-    // 进入音乐列表
+if ($userData['openId'] && $userData['openId'] == "oKa7r4j8ii6JTr_MWwQuFWqPwHAU") {
+//if (True) {
+  // 进入音乐列表
    $siteRestHandler = new AjmideRestHandler();
 } else {
     // 进入电台列表
     $siteRestHandler = new SiteRestHandler();
-//}
+}
 
 /*
  * RESTful service 控制器

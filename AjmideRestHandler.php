@@ -3,6 +3,7 @@ header('Content-Type:text/json;charset=utf-8');
 require_once ("SimpleRest.php");
 
 class AjmideRestHandler extends SimpleRest {
+    #private $dic = "FM_List";
     private $dic = "FM_Ajmide_List";
     function getAllRegions($version) {
         $json_string = file_get_contents($this->dic . "/regions.json");
