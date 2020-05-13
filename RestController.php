@@ -1,6 +1,7 @@
 <?php
 require_once("SiteRestHandler.php");
 require_once("MusicRestHandler.php");
+require_once("AjmideRestHandler.php");
 
 $fm = "";
 $region = "";
@@ -24,14 +25,14 @@ $siteRestHandler;
 $filename = 'userRecord.txt';
 if ($userData['openId'])
 {
-//    file_put_contents($filename, $userData['openId']."\n", FILE_APPEND|LOCK_EX);
+   file_put_contents($filename, $userData['openId']."\n", FILE_APPEND|LOCK_EX);
 }
 
 //if ($userData['openId'] == "oKa7r4qiXoI0rYAIRkAuHHBW2Mew" || $userData['openId'] == "oKa7r4rL4mIpYja76NSt71rjPCTw") {
-//if ($userData['openId'] == "oKa7r4rL4mIpYja76NSt71rjPCTw") {
-    // 进入音乐列表
-  //  $siteRestHandler = new MusicRestHandler();
-//} else {
+if ($userData['openId'] == "oKa7r4qiXoI0rYAIRkAuHHBW2Mew") {
+    进入音乐列表
+   $siteRestHandler = new AjmideRestHandler();
+} else {
     // 进入电台列表
     $siteRestHandler = new SiteRestHandler();
 //}
