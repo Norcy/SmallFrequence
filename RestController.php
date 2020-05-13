@@ -31,7 +31,7 @@ if ($userData['openId'])
 //if ($userData['openId'] == "oKa7r4qiXoI0rYAIRkAuHHBW2Mew" || $userData['openId'] == "oKa7r4rL4mIpYja76NSt71rjPCTw") {
 // if ($userData['openId'] && $userData['openId'] == "oKa7r4j8ii6JTr_MWwQuFWqPwHAU") {
 //if (True) {
-if ($userData['os'] == 'android')
+if ($userData['os'] == 'android') {
   // 进入音乐列表
    $siteRestHandler = new AjmideRestHandler();
 } else {
